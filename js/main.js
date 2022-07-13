@@ -2,10 +2,13 @@ const app = new Vue(
     {
         el: '#root',
         data: {
-            mailList: '',
+            mailList: [],
+            clicked:  false,
         },
         methods: {
             generateTenMail: function () {
+
+                this.clicked = true;
 
                 for (let index = 0; index < 10; index++) {
                     
@@ -13,9 +16,11 @@ const app = new Vue(
                     
                         .then( (response) => {
     
-                            this.mail = response.data.response;
+                            const result = response.data.response;
                             
-                            console.log(this.mail);
+                            this.mailList.push(result);
+
+                            console.log(this.mailList);
                         });
                 };
             }
