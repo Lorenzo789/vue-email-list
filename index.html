@@ -26,7 +26,7 @@
         <h1 class="fw-bold m-4">Vue Email List</h1>
 
         <ol>
-            <li v-if="(mailList.length == 10)" v-for="(element, index) in this.mailList"  class="mb-2 fw-semibold">
+            <li v-if="(mailList.length == 10)" v-for="element in this.mailList"  class="mb-2 fw-semibold">
                 {{ element }}
             </li>
         </ol>
