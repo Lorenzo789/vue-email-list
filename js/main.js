@@ -3,8 +3,9 @@ const app = new Vue(
         el: '#root',
         data: {
             mailList: [],
-            clicked:  false,
         },
+
+        // ! METHODS ! \\
         methods: {
             generateTenMail: function () {
 
@@ -22,14 +23,11 @@ const app = new Vue(
                         });
                 };
             },
-            showListMail: function(){
-
-                this.clicked = true;
-                
-            }
         },
+
+        // * HOOK * \\
         created(){
             this.generateTenMail();
-        }
+        },
     }
 );
