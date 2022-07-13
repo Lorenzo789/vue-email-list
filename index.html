@@ -26,12 +26,12 @@
         <h1 class="fw-bold m-4">Vue Email List</h1>
 
         <ol>
-            <li v-for="(element, index) in this.mailList" class="mb-2 fw-semibold">
-                {{ element }}
+            <li v-for="(element, index) in this.mailList" class="mb-2 fw-semibold ms_display" :class="{'d-block': clicked == true}">
+                {{ index }} {{ element }}
             </li>
         </ol>
 
-        <button @click="generateTenMail()" :class="{'disabled': clicked == true}" class="btn btn-lg btn-success mt-4">Generate Email</button>
+        <button @click="showListMail()" class="btn btn-lg btn-success mt-4">Generate Email</button>
     </div>
 
     <!-- MY SCRIPT -->

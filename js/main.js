@@ -8,8 +8,6 @@ const app = new Vue(
         methods: {
             generateTenMail: function () {
 
-                this.clicked = true;
-
                 for (let index = 0; index < 10; index++) {
                     
                     axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
@@ -23,7 +21,15 @@ const app = new Vue(
                             console.log(this.mailList);
                         });
                 };
+            },
+            showListMail: function(){
+
+                this.clicked = true;
+                
             }
         },
+        created(){
+            this.generateTenMail();
+        }
     }
 );
